@@ -1,8 +1,7 @@
-FROM node:20.18.0
+FROM node:20
 WORKDIR /app
-COPY package.json .
+COPY package*.json /app/
 RUN npm install
-ADD . .
+COPY . .
 EXPOSE 8080
-USER node
 CMD [ "node","index.js" ]
